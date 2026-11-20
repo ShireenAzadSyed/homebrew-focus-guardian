@@ -99,13 +99,21 @@ When a distraction is intercepted, your tab is redirected to a distraction-free,
   * Controls: Start, Pause, Reset (25m), and `+5m` Extend.
   * Audio Chime on completion synthesized natively via the HTML5 Web Audio API.
 
-### 5. 1-Click "Allow this Video & Watch" Override
-* Instant safety valve on the reflection page for legitimate videos with ambiguous titles.
-* Extracts and whitelists the unique 11-character YouTube `video_id` into `~/.focus-guardian/config/user_whitelist.json`.
-* Unaffected by URL variations, timestamps (`&t=`), or tracking tags (`&feature=shared`).
-* Subsequent videos clicked on YouTube continue to be scanned and blocked normally.
+### 5. 1-Click "Allow this Video & Watch" (YouTube Only)
+* Instant safety valve on the reflection page for legitimate learning or spiritual videos with ambiguous titles.
+* **YouTube Video ID Bound:** Extracts and whitelists only the unique 11-character YouTube `video_id` into `~/.focus-guardian/config/user_whitelist.json`.
+* **Zero Social Media Poisoning:** The "Allow" button is strictly hidden for social media and streaming domains (Instagram, TikTok, X, Netflix). Non-video sites cannot be permanently whitelisted.
+* **Zero False Re-Blocks:** Unaffected by URL variations, timestamps (`&t=`), or tracking tags (`&feature=shared`).
+* **Subsequent Scanning Protected:** Next videos clicked on YouTube continue to be scanned and blocked normally.
 
-### 6. Anti-Tamper & Commitment Friction Shield
+### 6. Intentional Dopamine Pass (Hybrid Model for Social Media)
+* **Conscious, Time-Boxed Breaks:** Need to check an urgent Instagram message, reply to an X/Twitter DM, or verify a 2FA code? Request a strictly timed pass: **5 Minutes (Quick Task)** or **10 Minutes (Standard Break)**.
+* **Daily Quota Protection:** Hard cap of **2 passes per day** (configurable). When your daily quota hits zero, the unlock button is strictly locked.
+* **10-Second Impulse Cooling-Off Gate:** Requires entering a specific purpose and enduring a mandatory 10-second reflection countdown before unlocking, interrupting impulsive dopamine craving loops.
+* **Wall-Clock Window & Automatic Eviction:** The timer runs continuously in real time. When `00:00` hits, macOS launchd and AppleScript immediately re-lock the site, redirect open tabs back to the reflection page, and display a native macOS notification: *"🛡️ Time's Up! Focus Guardian has re-locked your session."*
+* **Discipline Refund (Early Seal):** Finish your task in under 3 minutes? Click `[ 🔒 I'm Done — Re-Lock Now ]`! Focus Guardian records a **Discipline Win** and **refunds the pass 100% back to your daily balance**.
+
+### 7. Anti-Tamper & Commitment Friction Shield
 * **Root System Lock:** Running `focus-guardian install-root` anchors the daemon under `/Library/LaunchDaemons/`, making it impossible for standard user commands or Activity Monitor to kill.
 * **Auto-Respawn:** Registered with macOS `launchd` (`KeepAlive: true`). If terminated, macOS automatically restarts it in < 1 second.
 * **Friction-Protected Shutdown:** Stopping or uninstalling (`focus-guardian stop`) enforces:
